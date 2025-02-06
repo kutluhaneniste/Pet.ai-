@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Astria AI Pet Portrait Generator
 
 Evcil hayvanlarınız için yapay zeka ile sanatsal portreler oluşturan modern bir web uygulaması.
@@ -128,3 +129,7 @@ npm start
 ## Lisans
 
 MIT 
+=======
+# Pet.ai-
+Pet.ai is a web-app to provide ai generated customizable pet photos.
+>>>>>>> 6c4d16478ca0e5ce714cd95aba745017180a4245
