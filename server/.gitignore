@@ -1,0 +1,43 @@
+# Ortam değişkenleri
+.env
+.env.local
+.env.*.local
+
+# Bağımlılıklar
+/node_modules
+/.pnp
+.pnp.js
+
+# Log dosyaları
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.log
+
+# IDE ve editör dosyaları
+/.idea
+/.vscode
+*.swp
+*.swo
+.DS_Store
+
+# Yapı çıktıları
+/dist
+/build
+
+# Test kapsama raporları
+/coverage
+
+# Geçici dosyalar
+/tmp
+/temp
+
+# Yüklenen dosyalar
+/uploads
+
+# Redis
+dump.rdb
+
+# PM2
+ecosystem.config.js 
