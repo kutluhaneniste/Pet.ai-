@@ -1,60 +1,45 @@
-<<<<<<< HEAD
-# Astria AI Pet Portrait Generator
+# Pet.ai — AI Pet Portrait Generator
 
-Evcil hayvanlarınız için yapay zeka ile sanatsal portreler oluşturan modern bir web uygulaması.
+Generate artistic AI portraits of your pets using fine-tuned image generation models.
 
-## Özellikler
+Upload photos of your pet, train a personalized AI model, and generate portraits in any style — oil painting, anime, watercolor, studio photography.
 
-- 🐾 Evcil hayvan fotoğraflarından sanatsal portreler oluşturma
-- 🎨 Astria AI entegrasyonu
-- 💳 Ödeme sistemi (Iyzico)
-- 📦 AWS S3 depolama
-- 🔐 JWT tabanlı kimlik doğrulama
-- 🎯 Modern ve kullanıcı dostu arayüz
+---
 
-## Teknolojiler
+## Features
 
-### Frontend
-- React.js
-- Material-UI (MUI)
-- React Dropzone
+- Fine-tuned AI model training per pet via Astria AI
+- Multi-style portrait generation
+- Payment integration (Iyzico)
+- Cloud storage for all generated images (AWS S3)
+- JWT authentication with secure sessions
 
-### Backend
-- Node.js
-- Express.js
-- PostgreSQL
-- JWT
+---
 
-### Servisler
-- Astria AI API
-- AWS S3
-- Iyzico Payment
+## Tech Stack
 
-## Kurulum
+**Frontend:** React.js, Material-UI, React Dropzone
+**Backend:** Node.js, Express.js, PostgreSQL, JWT
+**AI:** Astria AI API (fine-tuned Stable Diffusion)
+**Infrastructure:** AWS S3, Iyzico Payments
 
-1. Repoyu klonlayın:
+---
+
+## Setup
+
 ```bash
-git clone [repo-url]
-cd modern-fullstack-app
+git clone https://github.com/kutluhaneniste/Pet.ai-
+cd Pet.ai-
+
+# Install all dependencies
+npm install
+cd client && npm install
+cd ../server && npm install
 ```
 
-2. Gerekli paketleri yükleyin:
-```bash
-# Root dizininde
-npm install
+Configure `/server/.env`:
 
-# Client dizininde
-cd client
-npm install
-
-# Server dizininde
-cd ../server
-npm install
-```
-
-3. `.env` dosyasını oluşturun:
-```bash
-# /server/.env dosyası
+```env
 PORT=5001
 NODE_ENV=development
 FRONTEND_URL=http://localhost:3000
@@ -63,7 +48,7 @@ FRONTEND_URL=http://localhost:3000
 PGHOST=localhost
 PGUSER=your_username
 PGPASSWORD=your_password
-PGDATABASE=modern_fullstack_db
+PGDATABASE=petai_db
 PGPORT=5432
 
 # JWT
@@ -72,64 +57,48 @@ JWT_EXPIRES_IN=24h
 
 # Astria AI
 ASTRIA_API_KEY=your_astria_api_key
-ASTRIA_API_URL=https://api.astria.ai/v1
 
 # AWS S3
-AWS_ACCESS_KEY_ID=your_aws_access_key
-AWS_SECRET_ACCESS_KEY=your_aws_secret_key
+AWS_ACCESS_KEY_ID=your_key
+AWS_SECRET_ACCESS_KEY=your_secret
 AWS_REGION=your_region
-AWS_BUCKET_NAME=your_bucket_name
+AWS_BUCKET_NAME=your_bucket
 
-# Iyzico
-IYZICO_API_KEY=your_iyzico_api_key
-IYZICO_SECRET_KEY=your_iyzico_secret_key
+# Iyzico (payments)
+IYZICO_API_KEY=your_key
+IYZICO_SECRET_KEY=your_secret
 IYZICO_BASE_URL=https://sandbox-api.iyzipay.com
 ```
 
-4. PostgreSQL veritabanını oluşturun:
-```sql
-CREATE DATABASE modern_fullstack_db;
-```
-
-## Çalıştırma
-
-1. Backend'i başlatın:
 ```bash
-cd server
-npm run dev
+# Run backend
+cd server && npm run dev
+
+# Run frontend
+cd client && npm start
 ```
 
-2. Frontend'i başlatın:
-```bash
-cd client
-npm start
-```
+Frontend: http://localhost:3000
+Backend: http://localhost:5001
 
-3. Tarayıcıda açın:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:5001
+---
 
-## API Endpoints
+## API
 
-### Auth
-- `POST /api/auth/register` - Yeni kullanıcı kaydı
-- `POST /api/auth/login` - Kullanıcı girişi
-- `GET /api/auth/profile` - Kullanıcı profili
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/register` | Register new user |
+| POST | `/api/auth/login` | Login |
+| GET | `/api/auth/profile` | Get user profile |
+| POST | `/api/images/generate` | Generate portrait |
+| GET | `/api/images/status/:jobId` | Check generation status |
+| GET | `/api/images/user` | Get user's portraits |
+| POST | `/api/orders` | Create order |
+| GET | `/api/orders` | List orders |
+| GET | `/api/orders/:id` | Order details |
 
-### Images
-- `POST /api/images/generate` - Görsel oluşturma
-- `GET /api/images/status/:jobId` - Görsel durumu kontrolü
-- `GET /api/images/user` - Kullanıcının görselleri
+---
 
-### Orders
-- `POST /api/orders` - Yeni sipariş oluşturma
-- `GET /api/orders` - Siparişleri listeleme
-- `GET /api/orders/:id` - Sipariş detayı
+## License
 
-## Lisans
-
-MIT 
-=======
-# Pet.ai-
-Pet.ai is a web-app to provide ai generated customizable pet photos.
->>>>>>> 6c4d16478ca0e5ce714cd95aba745017180a4245
+MIT
